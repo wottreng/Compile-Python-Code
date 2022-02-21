@@ -1,9 +1,10 @@
 # Compile-Python-Code
-compile python code into binary file for easy fast execution \
+compile python code into binary file for distribution and execution \
 this uses the `Nuitka` python module to compile python code \
-https://nuitka.net/doc/user-manual.html
+READ the DOCS: https://nuitka.net/doc/user-manual.html
 
 ## Steps to use:
-* install Nuitka: `pip3 install nuitka`
-* paste code into `main.py`
-* run `compile.sh`
+* download repository
+* make compile.py excutable: `chmod 770 compile.py`
+* EDIT `compile.py` to include any imports/modules required for execution
+* run compile.py: `./compile.py`
