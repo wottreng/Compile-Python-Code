@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
+# version 3.0
 
-# ADD MODULES TO THIS LIST THAT ARE REQUIRED FOR RUN TIME EXECUTION
+# ADD MODULES TO THIS LIST THAT ARE REQUIRED FOR RUN TIME EXECUTION ex. "module_name"
 required_modules_for_project: list = []
 
 # -----------------------------------
@@ -20,10 +21,10 @@ for module in required_modules_for_project:
     print(f"[*] Installing module, {module}, into virtual environment")
     os.system(f"./venv/bin/pip3 install {module}")
 #
-print("[*] creating standalone package for distribution: main.dist")
-os.system("./venv/bin/python3 -m nuitka --standalone main.py")
+print("[*] creating standalone binary for distribution: main.bin")
+os.system("./venv/bin/python3 -m nuitka --onefile main.py")
 #
 print("[!] cleaning build environment..")
-os.system("sudo rm -r ./main.build && sudo rm -r ./venv")
+os.system("rm -r ./main.build && rm -r ./main.dist && rm -r ./venv")
 #
-print("[*] compliation complete. call function by: './main.dist/main'")
+print("[*] compliation complete. call function by: './main.bin'")
